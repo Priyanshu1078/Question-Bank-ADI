@@ -2,13 +2,11 @@ import java.util.*;
 public class ques3 {
     public static class TreeNode{
         int val;
-        int h;
         TreeNode left;
         TreeNode right;
         TreeNode(){}
         TreeNode(int val){
             this.val=val;
-            this.h=1;
         }
     }
     public static void main(String[] args) {
