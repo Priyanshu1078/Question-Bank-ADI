@@ -12,7 +12,7 @@ public class ques6 {
     static int idx=0;
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        String s=sc.nextLine();
+        String s=sc.nextLine(); //array size is not given so we are taking input array as String and converting it in Integer Array.
         int p=sc.nextInt();
         int q=sc.nextInt();
         String str[]=s.split(" ");
