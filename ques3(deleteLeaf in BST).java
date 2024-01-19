@@ -9,12 +9,12 @@ public class ques3 {
             this.val=val;
         }
     }
+    static int idx=0;
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int arr[]=new int[7];
         for(int i=0;i<7;i++) arr[i]=sc.nextInt();
-        Arrays.sort(arr);
-        TreeNode root=create(arr,0,6);
+        TreeNode root=create(arr,Integer.MAX_VALUE);
         root=deleteLeaf(root);
         print(root);
     }
@@ -24,12 +24,14 @@ public class ques3 {
         root.right=deleteLeaf(root.right);
         return root;
     }
-    public static TreeNode create(int arr[],int s,int e){
-        if(s>e) return null;
-        int mid=(s+e)/2;
-        TreeNode root=new TreeNode(arr[mid]);
-        root.left=create(arr,s,mid-1);
-        root.right=create(arr,mid+1,e);
+    public static TreeNode create(int[] pre, int max){
+        if(idx>=pre.length || pre[idx]>max){
+            return null;
+        }
+        TreeNode root=new TreeNode(pre[idx]);
+        idx++;
+        root.left=create(pre,root.val);
+        root.right=create(pre,max);
         return root;
     }
     public static void print(TreeNode root){
