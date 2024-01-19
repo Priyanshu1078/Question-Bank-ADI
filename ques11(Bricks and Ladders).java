@@ -2,7 +2,7 @@ import java.util.*;
 public class ques11 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        String s=sc.nextLine(); //array size is not given so we are taking input array as String and converting it in Integer Array or you can we sc.hasNext().
+        String s=sc.nextLine(); //array size is not given so we are taking input array as String and converting it in Integer Array or you can use sc.hasNext().
         int bricks=sc.nextInt();
         int ladders=sc.nextInt();
         String str[]=s.split(" ");
