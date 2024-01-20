@@ -4,17 +4,16 @@ public class ques3 {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(){}
         TreeNode(int val){
             this.val=val;
         }
     }
-    static int idx=0;
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int arr[]=new int[7];
         for(int i=0;i<7;i++) arr[i]=sc.nextInt();
-        TreeNode root=create(arr,Integer.MAX_VALUE);
+        TreeNode root=sol(null,arr[0]);
+        for(int i=1;i<7;i++) root=sol(root,arr[i]);
         root=deleteLeaf(root);
         print(root);
     }
@@ -24,14 +23,10 @@ public class ques3 {
         root.right=deleteLeaf(root.right);
         return root;
     }
-    public static TreeNode create(int[] pre, int max){
-        if(idx>=pre.length || pre[idx]>max){
-            return null;
-        }
-        TreeNode root=new TreeNode(pre[idx]);
-        idx++;
-        root.left=create(pre,root.val);
-        root.right=create(pre,max);
+    public static TreeNode sol(TreeNode root, int k){
+        if(root==null) return new TreeNode(k);
+        if(root.val>k) root.left=sol(root.left,k);
+        else if(root.val<k) root.right=sol(root.right,k);
         return root;
     }
     public static void print(TreeNode root){
