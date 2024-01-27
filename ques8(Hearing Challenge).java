@@ -27,7 +27,6 @@ public class ques8 {
             x=x+a;
             c++;
         }
-        System.out.println(x);
         return false;
     }
 }
