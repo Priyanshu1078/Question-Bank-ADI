@@ -17,7 +17,7 @@ public class ques7 {
         int l=t.length();
         s=s.substring(l);
         idx=s.indexOf(t);
-        if(idx==-1 || idx>0) return false;
+        if(idx==-1) return false;
         idx=s.lastIndexOf(t);
         return idx==s.length()-t.length();
     }
