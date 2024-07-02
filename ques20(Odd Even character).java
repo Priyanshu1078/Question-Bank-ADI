@@ -9,5 +9,12 @@ public class ques20 {
             else n--;
             System.out.print((char)n);
         }
+        //Another method
+        char[] arr=s.toCharArray();
+        for(int i=0;i<arr.length;i++){
+            if(i%2==0) arr[i]++;
+            else arr[i]--;
+        }
+        System.out.println(new String(arr));
     }
 }
