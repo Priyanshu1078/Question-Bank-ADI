@@ -8,6 +8,14 @@ public class ques33 {
             this.val=val;
         }
     }
+    public static class Pair{
+        int val;
+        int level;
+        Pair(int val,int level){
+            this.val=val;
+            this.level=level;
+        }
+    }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -18,22 +26,22 @@ public class ques33 {
         }
         TreeNode root=new TreeNode(arr[0]);
         for(int i=1;i<n;i++) root=sol(root,arr[i]);
-        HashMap<Integer,Integer> map=new HashMap<>();
-        sol(root,map,0);
+        HashMap<Integer,Pair> map=new HashMap<>();
+        sol(root,map,0,0);
         PriorityQueue<Integer> pq=new PriorityQueue<>();
         pq.addAll(map.keySet());
         while(!pq.isEmpty()){
             int x=pq.poll();
-            System.out.print(map.get(x)+" ");
+            System.out.print(map.get(x).val+" ");
         }
     }
-    public static void sol(TreeNode root,HashMap<Integer,Integer> map,int l){
+    public static void sol(Node root,HashMap<Integer,Pair> map,int x,int y){
         if(root==null) return ;
-        if(!map.containsKey(l)){
-            map.put(l,root.val);
+        if(!map.containsKey(x) || map.get(x).level>y){
+            map.put(x,new Pair(root.data,y));
         }
-        sol(root.left,map,l-1);
-        sol(root.right,map,l+1);
+        sol(root.left,map,x-1,y+1);
+        sol(root.right,map,x+1,y+1);
     }
     public static TreeNode sol(TreeNode root, int k){
         if(root==null) return new TreeNode(k);
