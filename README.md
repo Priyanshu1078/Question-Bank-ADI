@@ -1,5 +1,3 @@
----
-
 # ADI-Batch 2021 Question Bank and Solutions
 
 This repository contains a collection of problems and their solutions in Java, designed for the ADI-Batch 2021. Below is a list of the problems included in this repository along with their Topics.
@@ -23,7 +21,7 @@ This repository contains a collection of problems and their solutions in Java, d
 ### 8. Hearing Challenge
 **Topic**: String
 ### 9. First Negative Integer in Every Window
-**Topic**: Sliding  Window, String
+**Topic**: Sliding Window, String
 ### 10. Longest Increasing Subsequence
 **Topic**: Dynamic Programming
 ### 11. Bricks and Ladders
