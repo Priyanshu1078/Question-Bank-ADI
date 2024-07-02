@@ -6,6 +6,7 @@ This repository contains a collection of problems and their solutions in Java, d
 
 ### 1. Knapsack Problem
 **Topic**: Dynamic Programming
+[Solution - ques1(weight and profit).java](src/ques1(weight and profit).java)
 ### 2. Password of the Treasure Box
 **Topic**: AVL Tree
 ### 3. Leaf Node Deletion
